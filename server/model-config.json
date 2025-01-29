@@ -1,0 +1,17 @@
+{
+  "Account": {
+    "dataSource": "db"
+  },
+  "App": {
+    "dataSource": "db"
+  },
+  "InternalDiagnose": {
+    "dataSource": "db"
+  },
+  "InternalPatient": {
+    "dataSource": "db"
+  },
+  "Role": {
+    "dataSource": "db"
+  }
+}

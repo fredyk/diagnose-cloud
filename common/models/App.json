@@ -1,0 +1,44 @@
+{
+  "name": "App",
+  "plural": "apps",
+  "base": "App",
+  "public": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "default": null
+    }
+  },
+  "relations": {
+    "account": {
+      "type": "belongsTo",
+      "model": "Account",
+      "primaryKey": null,
+      "foreignKey": null,
+      "options": {
+        "skipAuth": false
+      }
+    }
+  },
+  "hidden": null,
+  "protected": null,
+  "validations": null,
+  "casbin": {
+    "requestDefinition": "",
+    "policyDefinition": "",
+    "roleDefinition": "",
+    "policyEffect": "",
+    "matchersDefinition": "",
+    "policies": null
+  },
+  "cache": {
+    "datasource": "",
+    "ttl": 0,
+    "keys": null,
+    "excludeFields": null
+  },
+  "mongo": {
+    "collection": ""
+  }
+}

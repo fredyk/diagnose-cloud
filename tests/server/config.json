@@ -1,0 +1,23 @@
+{
+  "name": "diagnose-cloud",
+  "version": "0.0.1",
+  "description": "Example app",
+  "models": {
+    "include": [
+      "../common/models"
+    ]
+  },
+  "casbin": {
+    "dumpModels": false,
+    "models": {
+      "dumpDirectory": "./data"
+    },
+    "policies": {
+      "outputDirectory": "./data"
+    }
+  },
+  "restApiRoot": "/api/v1",
+  "port": 8080,
+  "strictSingleRelatedDocumentCheck": true,
+  "env": {}
+}

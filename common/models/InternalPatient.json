@@ -1,0 +1,41 @@
+{
+  "name": "InternalPatient",
+  "plural": "",
+  "base": "PersistedModel",
+  "public": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "documentNumber": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "relations": {},
+  "hidden": [],
+  "protected": null,
+  "validations": null,
+  "casbin": {
+    "requestDefinition": "",
+    "policyDefinition": "",
+    "roleDefinition": "",
+    "policyEffect": "",
+    "matchersDefinition": "",
+    "policies": null
+  },
+  "cache": {
+    "datasource": "",
+    "ttl": 0,
+    "keys": null,
+    "excludeFields": null
+  },
+  "mongo": {
+    "collection": ""
+  }
+}
