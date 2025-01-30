@@ -1,7 +1,7 @@
 package server
 
 import (
-	"github.com/fredyk/diagnose-cloud/common/models"
+	"github.com/fredyk/diagnose-cloud/server/core/adapters/westack/models"
 	"github.com/fredyk/diagnose-cloud/server/core/infra"
 	"github.com/fredyk/westack-go/v2/westack"
 )

@@ -2,6 +2,11 @@
   "name": "diagnose-cloud",
   "version": "0.0.1",
   "description": "Example app",
+  "models": {
+    "include": [
+      "server/core/adapters/westack/models"
+    ]
+  },
   "casbin": {
     "dumpModels": false,
     "models": {
