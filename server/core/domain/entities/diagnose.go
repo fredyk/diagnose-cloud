@@ -2,7 +2,7 @@ package entities
 
 import "time"
 
-type InternalDiagnose struct {
+type Diagnose struct {
 	Id string `json:"id,omitempty" bson:"_id,omitempty"`
 
 	// required

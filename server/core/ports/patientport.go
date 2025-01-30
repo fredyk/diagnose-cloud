@@ -1,5 +1,5 @@
 package ports
 
-type ExternalPatientPort interface {
+type PatientPort interface {
 	GetDiagnoses() error
 }

@@ -1,9 +1,9 @@
-package models
+package entities
 
 import (
 	_ "embed"
 
-	"github.com/fredyk/diagnose-cloud/server/core/domain/entities"
+	"github.com/fredyk/diagnose-cloud/server/adapters/external-consumer-1/entities"
 	"github.com/fredyk/westack-go/v2/model"
 )
 

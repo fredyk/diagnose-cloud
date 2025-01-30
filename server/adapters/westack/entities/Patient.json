@@ -1,5 +1,5 @@
 {
-  "name": "InternalPatient",
+  "name": "Patient",
   "plural": "",
   "base": "PersistedModel",
   "public": true,
@@ -21,14 +21,6 @@
   "hidden": [],
   "protected": null,
   "validations": null,
-  "casbin": {
-    "requestDefinition": "",
-    "policyDefinition": "",
-    "roleDefinition": "",
-    "policyEffect": "",
-    "matchersDefinition": "",
-    "policies": null
-  },
   "cache": {
     "datasource": "",
     "ttl": 0,

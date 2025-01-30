@@ -1,9 +1,10 @@
-package models
+package entities
 
 import (
 	_ "embed"
-	"github.com/fredyk/westack-go/v2/model"
 	"time"
+
+	"github.com/fredyk/westack-go/v2/model"
 )
 
 type Account struct {

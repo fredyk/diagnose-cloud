@@ -1,4 +1,4 @@
-package models
+package entities
 
 import (
 	_ "embed"
@@ -7,8 +7,8 @@ import (
 	"github.com/fredyk/westack-go/v2/model"
 )
 
-type InternalPatient entities.InternalPatient
+type Diagnose entities.Diagnose
 
-func NewInternalPatient() model.Controller {
-	return &InternalPatient{}
+func NewDiagnose() model.Controller {
+	return &Diagnose{}
 }

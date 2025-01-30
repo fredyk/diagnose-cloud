@@ -1,21 +1,14 @@
 {
-  "name": "ExternalPatient",
+  "name": "Diagnose",
   "plural": "",
-  "base": "Model",
+  "base": "PersistedModel",
   "public": true,
   "properties": {},
   "relations": {},
   "hidden": [],
   "protected": null,
   "validations": null,
-  "casbin": {
-    "requestDefinition": "",
-    "policyDefinition": "",
-    "roleDefinition": "",
-    "policyEffect": "",
-    "matchersDefinition": "",
-    "policies": null
-  },
+  "casbin": {},
   "cache": {
     "datasource": "",
     "ttl": 0,

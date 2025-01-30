@@ -1,0 +1,11 @@
+{
+  "name": "ExternalPatient",
+  "plural": "external-patients",
+  "public": true,
+  "base": "Model",
+  "casbin": {
+    "policies": [
+      "$everyone,*,Consumer1GetPatients,allow"
+    ]
+  }
+}
