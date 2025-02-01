@@ -18,20 +18,19 @@ func SetupCloud(wstApp *westack.WeStack) {
 	if err != nil {
 		log.Fatalf("Failed to find registered models: %v", err)
 	}
-	// Bind remote operations for External Services
+
+	// Setup repositories
 	externalDiagnoseServiceImpl := services.NewExternalDiagnoseService(services.ExternalDiagnoseServiceOptions{
 		Repository: repositories.NewDiagnosesRepository(repositories.DiagnosesRepositoryOptions{
 			// Important to use the internal DiagnoseModel, because the External one is not persisted
 			PersitedDiagnoseModel: registeredModels.DiagnoseModel,
 		}),
 	})
-	externalDiagnoseService := services.NewDiagnoseServiceAdapter(
-		externalDiagnoseServiceImpl,
-	)
 
 	// Setup our Diagnose Cloud
+	// TODO: Setup some business logic in the Diagnose Cloud to use it
 	cloud := app.NewDiagnoseCloud(app.Options{
-		ExternalDiagnoseService: externalDiagnoseService,
+		ExternalDiagnoseService: services.NewDiagnoseServiceAdapter(externalDiagnoseServiceImpl),
 	})
 	fmt.Printf("cloud: %v\n", cloud)
 
@@ -40,6 +39,7 @@ func SetupCloud(wstApp *westack.WeStack) {
 	utils.DisablePatientDefaultOperations(registeredModels.PatientModel)
 	utils.DisableDiagnoseDefaultOperations(registeredModels.DiagnoseModel)
 
+	// Setup our custom API endpoints
 	model.BindRemoteOperationWithOptions(registeredModels.ExternalDiagnoseModel, externalDiagnoseServiceImpl.GetDiagnoses,
 		model.RemoteOptions().
 			WithName("Consumer1GetDiagnoses").
