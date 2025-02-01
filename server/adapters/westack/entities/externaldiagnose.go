@@ -7,8 +7,8 @@ import (
 	"github.com/fredyk/westack-go/v2/model"
 )
 
-type ExternalPatient entities.ExternalPatient
+type ExternalDiagnose entities.ExternalDiagnoseDto
 
-func NewExternalPatient() model.Controller {
-	return &ExternalPatient{}
+func NewExternalDiagnose() model.Controller {
+	return &ExternalDiagnose{}
 }

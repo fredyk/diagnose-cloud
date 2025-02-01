@@ -22,7 +22,7 @@ var diagnoseId string
 func TestMain(m *testing.M) {
 	// Start the server
 	go server.InitServer()
-	time.Sleep(5 * time.Second)
+	time.Sleep(3 * time.Second)
 
 	registeredModels, err := utils.FindRegisteredModels(server.App)
 	if err != nil {

@@ -1,0 +1,11 @@
+{
+  "name": "ExternalDiagnose",
+  "plural": "external-diagnoses",
+  "public": true,
+  "base": "Model",
+  "casbin": {
+    "policies": [
+      "consumer1,*,Consumer1GetDiagnoses,allow"
+    ]
+  }
+}

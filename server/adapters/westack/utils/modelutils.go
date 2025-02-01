@@ -13,7 +13,7 @@ type RegisteredModelsResult struct {
 	PatientModel  *model.StatefulModel
 	DiagnoseModel *model.StatefulModel
 
-	ExternalPatient *model.StatefulModel
+	ExternalDiagnoseModel *model.StatefulModel
 }
 
 func FindRegisteredModels(wstApp *westack.WeStack) (result RegisteredModelsResult, err error) {
@@ -33,7 +33,7 @@ func FindRegisteredModels(wstApp *westack.WeStack) (result RegisteredModelsResul
 		return result, fmt.Errorf("failed to finding model: %v", err)
 	}
 
-	result.ExternalPatient, err = wstApp.FindModel("ExternalPatient")
+	result.ExternalDiagnoseModel, err = wstApp.FindModel("ExternalDiagnose")
 	if err != nil {
 		return result, fmt.Errorf("failed to finding model: %v", err)
 	}

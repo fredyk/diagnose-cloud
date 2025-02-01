@@ -1,8 +1,11 @@
 package ports
 
+import (
+	"time"
+
+	"github.com/fredyk/diagnose-cloud/server/core/domain/entities"
+)
+
 type DiagnosePort interface {
-	GetPatientId() string
-	GetDiagnose() string
-	GetPrescription() string
-	GetDate() string
+	GetDiagnoses(patientName string, patientDob time.Time) ([]entities.Diagnose, error)
 }
