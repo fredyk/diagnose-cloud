@@ -28,7 +28,7 @@ func (r *DiagnosesRepositoryImpl) GetDiagnosesByNameOrDOB(patientName string, do
 		return nil, err
 	}
 
-	return utils.MapItems(diagnoses, mappers.MapModelInstanceToDiagnoseDTO)
+	return utils.MapItemsWithError(diagnoses, mappers.MapModelInstanceToDiagnoseDTO)
 }
 
 type DiagnosesRepositoryOptions struct {

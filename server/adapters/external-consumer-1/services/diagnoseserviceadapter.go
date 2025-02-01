@@ -22,7 +22,7 @@ func (s *DiagnoseServiceAdapter) GetDiagnoses(patientName string, patientDob tim
 	if err != nil {
 		return nil, err
 	}
-	return utils.MapItems(diagnoses, mappers.MapExternalDiagnoseToDiagnose)
+	return utils.MapItems(diagnoses, mappers.MapExternalDiagnoseToDiagnose), nil
 }
 
 // NewDiagnoseServiceAdapter creates a new instance of DiagnoseServiceAdapter

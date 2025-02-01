@@ -8,7 +8,7 @@ import (
 	"github.com/fredyk/westack-go/v2/model"
 )
 
-func MapExternalDiagnoseToDiagnose(diagnose externalentities.ExternalDiagnoseDto) (entities.Diagnose, error) {
+func MapExternalDiagnoseToDiagnose(diagnose externalentities.ExternalDiagnoseDto) entities.Diagnose {
 	return entities.Diagnose{
 		Id:   diagnose.Id,
 		Date: diagnose.Date,
@@ -16,7 +16,7 @@ func MapExternalDiagnoseToDiagnose(diagnose externalentities.ExternalDiagnoseDto
 		// TODO: Fetch diagnose
 		// Diagnose: 			item.Diagnose,
 		Prescription: diagnose.Prescription,
-	}, nil
+	}
 }
 
 func MapModelInstanceToDiagnoseDTO(diagnose model.Instance) (dto externalentities.ExternalDiagnoseDto, err error) {
