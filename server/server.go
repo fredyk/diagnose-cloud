@@ -6,14 +6,16 @@ import (
 	"github.com/fredyk/westack-go/v2/westack"
 )
 
+var App *westack.WeStack
+
 func InitServer() error {
 
-	app := westack.New(westack.Options{})
+	App = westack.New(westack.Options{})
 
-	app.Boot(
+	App.Boot(
 		westack.BootOptions{RegisterControllers: entities.RegisterControllers},
 		infra.SetupCloud,
 	)
 
-	return app.Start()
+	return App.Start()
 }

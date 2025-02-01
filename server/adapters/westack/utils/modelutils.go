@@ -43,7 +43,6 @@ func FindRegisteredModels(wstApp *westack.WeStack) (result RegisteredModelsResul
 
 func DisableAccountDefaultOperations(AccountModel *model.StatefulModel) {
 	AccountModel.DisableRemoteOperation(wst.OperationNameFindMany)
-	AccountModel.DisableRemoteOperation(wst.OperationNameCreate)
 	AccountModel.DisableRemoteOperation(wst.OperationNameCount)
 	AccountModel.DisableRemoteOperation(wst.OperationNameFindSelf)
 	AccountModel.DisableRemoteOperation(wst.OperationNameRefreshToken)

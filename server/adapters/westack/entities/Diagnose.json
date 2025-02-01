@@ -4,11 +4,21 @@
   "base": "PersistedModel",
   "public": true,
   "properties": {},
-  "relations": {},
+  "relations": {
+    "patient": {
+      "type": "belongsTo",
+      "model": "Patient",
+      "foreignKey": "patientId"
+    }
+  },
   "hidden": [],
   "protected": null,
   "validations": null,
-  "casbin": {},
+  "casbin": {
+    "policies": [
+      "internal,*,read_write,allow"
+    ]
+  },
   "cache": {
     "datasource": "",
     "ttl": 0,

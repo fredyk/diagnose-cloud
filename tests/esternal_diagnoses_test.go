@@ -26,7 +26,7 @@ func TestGetDiagnosesExternalWithInvalidToken(t *testing.T) {
 
 }
 
-func TestPostDiagnosisExternal(t *testing.T) {
+func TestPostDiagnosesExternal(t *testing.T) {
 
 	t.Parallel()
 
@@ -34,7 +34,7 @@ func TestPostDiagnosisExternal(t *testing.T) {
 
 }
 
-func TestPostDiagnosisExternalWithoutCredentials(t *testing.T) {
+func TestPostDiagnosesExternalWithoutCredentials(t *testing.T) {
 
 	t.Parallel()
 
@@ -42,7 +42,7 @@ func TestPostDiagnosisExternalWithoutCredentials(t *testing.T) {
 
 }
 
-func TestPostDiagnosisExternalWithInvalidToken(t *testing.T) {
+func TestPostDiagnosesExternalWithInvalidToken(t *testing.T) {
 
 	t.Parallel()
 

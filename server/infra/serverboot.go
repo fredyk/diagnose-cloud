@@ -3,7 +3,6 @@ package infra
 import (
 	"log"
 
-	"github.com/fredyk/diagnose-cloud/server/adapters/external-consumer-1/entities"
 	"github.com/fredyk/diagnose-cloud/server/adapters/external-consumer-1/services"
 	"github.com/fredyk/diagnose-cloud/server/adapters/westack/utils"
 	"github.com/fredyk/westack-go/v2/model"
@@ -23,16 +22,10 @@ func SetupCloud(wstApp *westack.WeStack) {
 	utils.DisablePatientDefaultOperations(registeredModels.PatientModel)
 	utils.DisableDiagnoseDefaultOperations(registeredModels.DiagnoseModel)
 
-	// Bind remote operations for External Service
-	externalService := services.NewExternalService(services.Options{})
+	// Bind remote operations for External Services
+	externalDiagnoseService := services.NewExternalDiagnoseService(services.ExternalDiagnoseServiceOptions{})
 
-	model.BindRemoteOperationWithOptions[services.GetPatientsRequest, []entities.ExternalPatient](registeredModels.ExternalPatient, externalService.GetPatients,
-		model.RemoteOptions().
-			WithName("Consumer1GetPatients").
-			WithPath("/consumer-1/get-patients").
-			WithVerb("get"))
-
-	model.BindRemoteOperationWithOptions(registeredModels.DiagnoseModel, externalService.GetDiagnoses,
+	model.BindRemoteOperationWithOptions(registeredModels.DiagnoseModel, externalDiagnoseService.GetDiagnoses,
 		model.RemoteOptions().
 			WithName("Consumer1GetDiagnoses").
 			WithPath("/consumer-1/get-diagnoses").

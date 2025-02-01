@@ -17,10 +17,21 @@
       "required": true
     }
   },
-  "relations": {},
+  "relations": {
+    "diagnose": {
+      "type": "hasOne",
+      "model": "Diagnose",
+      "foreignKey": "patientId"
+    }
+  },
   "hidden": [],
   "protected": null,
   "validations": null,
+  "casbin": {
+    "policies": [
+      "internal,*,read_write,allow"
+    ]
+  },
   "cache": {
     "datasource": "",
     "ttl": 0,

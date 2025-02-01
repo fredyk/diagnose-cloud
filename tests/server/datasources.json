@@ -4,7 +4,7 @@
     "connector": "mongodb",
     "host": "localhost",
     "port": 27017,
-    "database": "diagnose_cloud",
+    "database": "diagnose_cloud_test",
     "username": "",
     "password": ""
   }
