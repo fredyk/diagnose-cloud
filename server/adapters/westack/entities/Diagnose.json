@@ -11,21 +11,9 @@
       "foreignKey": "patientId"
     }
   },
-  "hidden": [],
-  "protected": null,
-  "validations": null,
   "casbin": {
     "policies": [
       "internal,*,read_write,allow"
     ]
-  },
-  "cache": {
-    "datasource": "",
-    "ttl": 0,
-    "keys": null,
-    "excludeFields": null
-  },
-  "mongo": {
-    "collection": ""
   }
 }

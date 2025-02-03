@@ -10,25 +10,5 @@
       "default": null
     }
   },
-  "relations": {},
-  "hidden": null,
-  "protected": null,
-  "validations": null,
-  "casbin": {
-    "requestDefinition": "",
-    "policyDefinition": "",
-    "roleDefinition": "",
-    "policyEffect": "",
-    "matchersDefinition": "",
-    "policies": null
-  },
-  "cache": {
-    "datasource": "",
-    "ttl": 0,
-    "keys": null,
-    "excludeFields": null
-  },
-  "mongo": {
-    "collection": ""
-  }
+  "relations": {}
 }
