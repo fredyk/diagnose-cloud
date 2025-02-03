@@ -1,0 +1,27 @@
+services:
+
+  diagnose-mongo:
+    image: mongo:6
+    container_name: diagnose-mongo
+    networks:
+      - diagnose
+
+  diagnose-cloud:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: diagnose-cloud
+    networks:
+      - diagnose
+    ports:
+      - "8080:8080"
+    environment:
+      - "JWT_SECRET=9as5795g98ads,Adadsf."
+      - "WST_ADMIN_USERNAME=testadmin1520"
+      - "WST_ADMIN_PWD=b6878BO&Ob6o8HBonh,.Asdfasd"
+    depends_on:
+      - diagnose-mongo
+
+networks:
+  diagnose:
+    driver: bridge

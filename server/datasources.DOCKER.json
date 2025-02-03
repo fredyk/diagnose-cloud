@@ -1,0 +1,10 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "mongodb",
+    "url": "mongodb://diagnose-mongo:27017/diagnose_cloud",
+    "database": "diagnose_cloud",
+    "username": "",
+    "password": ""
+  }
+}
