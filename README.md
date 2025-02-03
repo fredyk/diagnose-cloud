@@ -13,7 +13,7 @@ Este proyecto es la implementación básica del backend de una aplicación de di
 ## Instalación y ejecución
 
 1. Clonar el repositorio
-2. Ejecutar `docker-compose up -d --build` en la raíz del proyecto
+2. Ejecutar `docker compose up -d --build` en la raíz del proyecto
 
 ## Endpoints
 
