@@ -28,10 +28,15 @@ func MapModelInstanceToDiagnoseDTO(diagnose model.Instance) (dto externalentitie
 			return dto, err
 		}
 	}
+	patient := diagnose.GetOne("patient")
+	var patientName string
+	if patient != nil {
+		patientName = patient.GetString("name")
+	}
 	return externalentities.ExternalDiagnoseDto{
 		Id:           diagnose.GetString("id"),
-		PatientName:  diagnose.GetOne("patient").GetString("name"),
-		DiagnoseId:   diagnose.GetString("diagnose_id"),
+		PatientName:  patientName,
+		Diagnose:     diagnose.GetString("diagnose"),
 		Date:         date,
 		Prescription: diagnose.GetString("prescription"),
 	}, nil

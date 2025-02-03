@@ -56,7 +56,21 @@ func TestPostDiagnosesExternal(t *testing.T) {
 
 	t.Parallel()
 
-	t.Error("Test not implemented")
+	createdDiagnose, err := wstfuncs.InvokeApiTyped[entities.ExternalDiagnose](
+		"POST",
+		"/external-diagnoses",
+		wst.M{
+			"patient_name": expected.CreatedDiagnosePatientName,
+			"diagnose":     expected.CreatedDiagnoseExpectedDiagnose,
+		},
+		wst.M{
+			"Authorization": "Bearer " + consumer1Token,
+			"Content-Type":  "application/json",
+		},
+	)
+	assert.NoError(t, err)
+	assert.NotNil(t, createdDiagnose)
+	assert.Equal(t, expected.CreatedDiagnoseExpectedDiagnose, createdDiagnose.Diagnose)
 
 }
 
@@ -64,7 +78,12 @@ func TestPostDiagnosesExternalWithoutCredentials(t *testing.T) {
 
 	t.Parallel()
 
-	t.Error("Test not implemented")
+	resp, err := wstfuncs.InvokeApiFullResponse("POST", "/external-diagnoses", wst.M{
+		"patient_name": expected.CreatedDiagnosePatientName,
+		"diagnose":     expected.CreatedDiagnoseExpectedDiagnose,
+	}, wst.M{"Content-Type": "application/json"})
+	assert.NoError(t, err)
+	assert.Equal(t, 401, resp.StatusCode)
 
 }
 
@@ -72,6 +91,14 @@ func TestPostDiagnosesExternalWithInvalidToken(t *testing.T) {
 
 	t.Parallel()
 
-	t.Error("Test not implemented")
+	resp, err := wstfuncs.InvokeApiFullResponse("POST", "/external-diagnoses", wst.M{
+		"patient_name": expected.CreatedDiagnosePatientName,
+		"diagnose":     expected.CreatedDiagnoseExpectedDiagnose,
+	}, wst.M{
+		"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiI2NzlkZTI2MDliYjFlZTgyZDBkNjY5M2UiLCJjcmVhdGVkIjoxNzM4NDAwMzUzMDcwLCJyb2xlcyI6WyJVU0VSIiwiY29uc3VtZXIxIl0sInR0bCI6MTIwOTYwMDAwMH2.aP2VLaqcP8pSXs2AozHgHKpcN-cAgxSMSalWq5wqcyk",
+		"Content-Type":  "application/json",
+	})
+	assert.NoError(t, err)
+	assert.Equal(t, 401, resp.StatusCode)
 
 }

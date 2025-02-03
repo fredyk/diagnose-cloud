@@ -45,5 +45,10 @@ func SetupCloud(wstApp *westack.WeStack) {
 			WithName("Consumer1GetDiagnoses").
 			WithPath("/").
 			WithVerb("get"))
+	model.BindRemoteOperationWithOptions(registeredModels.ExternalDiagnoseModel, externalDiagnoseServiceImpl.CreateDiagnoses,
+		model.RemoteOptions().
+			WithName("Consumer1CreateDiagnose").
+			WithPath("/").
+			WithVerb("post"))
 
 }

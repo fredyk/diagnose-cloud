@@ -5,7 +5,8 @@
   "base": "Model",
   "casbin": {
     "policies": [
-      "consumer1,*,Consumer1GetDiagnoses,allow"
+      "consumer1,*,Consumer1GetDiagnoses,allow",
+      "consumer1,*,Consumer1CreateDiagnose,allow"
     ]
   }
 }

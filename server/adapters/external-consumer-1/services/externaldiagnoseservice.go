@@ -4,6 +4,7 @@ import (
 	"time"
 
 	"github.com/fredyk/diagnose-cloud/server/adapters/external-consumer-1/entities"
+	"github.com/fredyk/diagnose-cloud/server/adapters/external-consumer-1/mappers"
 	"github.com/fredyk/diagnose-cloud/server/adapters/external-consumer-1/repositories"
 )
 
@@ -26,6 +27,14 @@ type ExternalDiagnoseService struct {
 
 func (s *ExternalDiagnoseService) GetDiagnoses(req GetDiagnosesRequest) ([]entities.ExternalDiagnoseDto, error) {
 	return s.repository.GetDiagnosesByNameOrDOB(req.PatientName, req.DOB)
+}
+
+func (s *ExternalDiagnoseService) CreateDiagnoses(req entities.ExternalDiagnoseDto) (entities.ExternalDiagnoseDto, error) {
+	created, err := s.repository.CreateDiagnose(req)
+	if err != nil {
+		return entities.ExternalDiagnoseDto{}, err
+	}
+	return mappers.MapModelInstanceToDiagnoseDTO(created)
 }
 
 type ExternalDiagnoseServiceOptions struct {

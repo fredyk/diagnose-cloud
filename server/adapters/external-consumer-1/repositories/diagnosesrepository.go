@@ -12,6 +12,7 @@ import (
 
 type DiagnosesRepository interface {
 	GetDiagnosesByNameOrDOB(patientName string, dob time.Time) ([]entities.ExternalDiagnoseDto, error)
+	CreateDiagnose(diagnose entities.ExternalDiagnoseDto) (model.Instance, error)
 }
 
 type DiagnosesRepositoryImpl struct {
@@ -29,6 +30,13 @@ func (r *DiagnosesRepositoryImpl) GetDiagnosesByNameOrDOB(patientName string, do
 	}
 
 	return utils.MapItemsWithError(diagnoses, mappers.MapModelInstanceToDiagnoseDTO)
+}
+
+func (r *DiagnosesRepositoryImpl) CreateDiagnose(diagnose entities.ExternalDiagnoseDto) (model.Instance, error) {
+	// TODO: Create the patient first
+	return r.PersistedDiagnoseModel.Create(wst.M{
+		"diagnose": diagnose.Diagnose,
+	}, r.systemContext)
 }
 
 type DiagnosesRepositoryOptions struct {

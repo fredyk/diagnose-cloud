@@ -7,7 +7,7 @@ type ExternalDiagnoseDto struct {
 
 	// required
 	PatientName string    `json:"patient_name"`
-	DiagnoseId  string    `json:"diagnose_id"`
+	Diagnose    string    `json:"diagnose"`
 	Date        time.Time `json:"modified"`
 
 	// optional

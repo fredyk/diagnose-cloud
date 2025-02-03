@@ -6,7 +6,7 @@ go 1.23.0
 
 require (
 	github.com/fredyk/westack-go/client/v2 v2.0.0-20250129085329-50955863eb16
-	github.com/fredyk/westack-go/v2 v2.0.0-alpha-rc47.0.20250129085329-50955863eb16
+	github.com/fredyk/westack-go/v2 v2.0.0-beta
 	github.com/stretchr/testify v1.10.0
 )
 
@@ -42,14 +42,12 @@ require (
 	github.com/rivo/uniseg v0.4.4 // indirect
 	github.com/sagikazarmark/locafero v0.4.0 // indirect
 	github.com/sagikazarmark/slog-shim v0.1.0 // indirect
-	github.com/shopspring/decimal v0.0.0-20180709203117-cd690d0c9e24 // indirect
 	github.com/sourcegraph/conc v0.3.0 // indirect
 	github.com/spf13/afero v1.11.0 // indirect
 	github.com/spf13/cast v1.6.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.19.0 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
-	github.com/tyler-sommer/stick v1.0.6 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.51.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect
