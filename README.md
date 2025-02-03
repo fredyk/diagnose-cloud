@@ -17,7 +17,7 @@ Este proyecto es la implementación básica del backend de una aplicación de di
 
 ## Endpoints
 
-El servicio diagnose-cloud arrancará en el puerto 8080. Los endpoints disponibles está disponibles en swagger-ui, en la ruta http://localhost:8080/swagger
+El servicio diagnose-cloud arrancará en el puerto 8080. Los endpoints están disponibles en swagger-ui, en la ruta http://localhost:8080/swagger
 
 ## Testing
 
